@@ -1,4 +1,4 @@
-# Simple deb package installer from url
+# :package: deb package installer from url
 
 ## Usage
 
