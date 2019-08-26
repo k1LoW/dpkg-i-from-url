@@ -2,7 +2,7 @@
 
 set -e
 
-DEB_FROM_URL="$(mktemp)"
-curl -L -o "$DEB_FROM_URL" $@
-dpkg -i "$DEB_FROM_URL"
-rm -f "$DEB_FROM_URL"
+DEB_URL="$(mktemp)"
+curl -L -o "$DEB_URL" $1
+dpkg -i "$DEB_URL"
+rm -f "$DEB_URL"
