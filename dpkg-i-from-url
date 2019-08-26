@@ -4,5 +4,10 @@ set -e
 
 DEB_URL="$(mktemp)"
 curl -L -o "$DEB_URL" $1
-dpkg -i "$DEB_URL"
+if [ ${EUID:-${UID}} = 0 ]; then
+    dpkg -i "$DEB_URL"
+else
+    sudo dpkg -i "$DEB_URL"
+fi
+
 rm -f "$DEB_URL"
