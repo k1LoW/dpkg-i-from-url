@@ -1,0 +1,4 @@
+language: bash
+script:
+  - curl -L https://git.io/dpkg-i-from-url | bash -s -- https://github.com/k1LoW/metr/releases/download/v0.7.0/metr_0.7.0-1_amd64.deb
+  - metr get all
