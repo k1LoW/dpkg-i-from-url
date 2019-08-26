@@ -1,4 +1,4 @@
-# :package: deb package installer from url
+# :package: deb package installer from url [![Build Status](https://travis-ci.org/k1LoW/dpkg-i-from-url.svg?branch=master)](https://travis-ci.org/k1LoW/dpkg-i-from-url)
 
 ## Usage
 
