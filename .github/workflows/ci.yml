@@ -1,0 +1,24 @@
+name: build
+
+on: push
+
+jobs:
+  job-test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup
+        run: sudo apt install -y curl
+
+      - name: Check out source code
+        uses: actions/checkout@v2
+
+      - name: Test Local
+        run: |
+          cat ./dpkg-i-from-url | bash -s -- https://github.com/k1LoW/metr/releases/download/v0.7.0/metr_0.7.0-1_amd64.deb
+          metr get all
+
+      - name: Test via URL
+        run: |
+          curl -L https://git.io/dpkg-i-from-url | bash -s -- https://github.com/k1LoW/cgrps/releases/download/v0.8.0/cgrps_0.8.0-1_amd64.deb
+          cgrps version
