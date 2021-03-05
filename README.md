@@ -10,4 +10,4 @@ $ curl -L https://git.io/dpkg-i-from-url | sh -s -- [DEB_URL]
 
 - curl
 - dpkg
-- sudo
+- sudo ( optional )
