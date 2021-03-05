@@ -2,12 +2,12 @@
 
 set -e
 
-DEB_URL="$(mktemp)"
-curl -L -o "$DEB_URL" $1
+DEB_PATH="$(mktemp)"
+curl -L -o "$DEB_PATH" $1
 if [ `whoami` = "root" ] ; then
-    dpkg -i "$DEB_URL"
+    dpkg -i "$DEB_PATH"
 else
-    sudo dpkg -i "$DEB_URL"
+    sudo dpkg -i "$DEB_PATH"
 fi
 
 rm -f "$DEB_URL"
